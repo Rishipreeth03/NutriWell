@@ -1,0 +1,3 @@
+#poetry add fastapi uvicorn[standard] pydantic pydantic-settings sqlalchemy alembic pandas numpy scikit-learn joblib gradio python-dotenv httpx
+#poetry run python -c "import sqlite3; print(sqlite3.sqlite_version)"
+#poetry run python -c "from app.db.database import engine; engine.connect(); print('SQLite connection successful!')"
