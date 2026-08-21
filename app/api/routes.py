@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.db.session import get_db
 from app.models.database_models import HealthRecord
 from app.schemas.health import PredictRequest, PredictResponse
+from app.services.llm_service import get_gemini_recommendations
 from app.services.prediction import predict_health
 from app.services.recommendation import build_recommendations, classify_risk
 
@@ -43,6 +44,11 @@ def predict_health_record(
 
     risk_level = classify_risk(prediction)
     recommendations = build_recommendations(prediction, payload)
+    gemini_recommendations = get_gemini_recommendations(
+        payload,
+        health_score=prediction,
+        risk_level=risk_level,
+    )
 
     record = HealthRecord(
         email=str(payload.email),
@@ -67,5 +73,6 @@ def predict_health_record(
         prediction=float(prediction),
         risk_level=risk_level,
         recommendations=recommendations,
+        gemini_recommendations=gemini_recommendations,
         created_at=record.created_at,
     )
