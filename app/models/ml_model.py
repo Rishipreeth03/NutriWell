@@ -3,7 +3,6 @@ from typing import Any
 
 import joblib
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MODEL_PATHS = [
     PROJECT_ROOT / "models" / "model_prediction.pkl",

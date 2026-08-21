@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import gradio as gr
@@ -26,7 +26,7 @@ def save_prediction_record(email: str, payload: dict, score: float, risk: str) -
     records.append(
         {
             "email": email,
-            "timestamp": datetime.utcnow().isoformat(timespec="seconds"),
+            "timestamp": datetime.now(UTC).isoformat(timespec="seconds"),
             "input": payload,
             "score": round(score, 2),
             "risk": risk,
@@ -111,7 +111,7 @@ def predict_from_form(
 
         return f"{score:.2f}", f"Risk: {risk}\n\n{recommendation}"
 
-    except Exception as exc:  # pragma: no cover - UI guard
+    except (KeyError, TypeError, ValueError, RuntimeError, OSError) as exc:  # pragma: no cover - UI guard
         return "Error", f"Prediction failed: {exc}"
 
 

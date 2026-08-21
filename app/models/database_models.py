@@ -39,7 +39,7 @@ class User(Base):
         nullable=False,
     )
 
-    assessments: Mapped[list["HealthAssessment"]] = relationship(
+    assessments: Mapped[list[HealthAssessment]] = relationship(
         back_populates="user",
         cascade="all, delete-orphan",
     )
@@ -115,11 +115,11 @@ class HealthAssessment(Base):
         nullable=False,
     )
 
-    user: Mapped["User"] = relationship(
+    user: Mapped[User] = relationship(
         back_populates="assessments",
     )
 
-    recommendations: Mapped[list["Recommendation"]] = relationship(
+    recommendations: Mapped[list[Recommendation]] = relationship(
         back_populates="assessment",
         cascade="all, delete-orphan",
     )
@@ -169,7 +169,7 @@ class Meal(Base):
         nullable=False,
     )
 
-    recommendations: Mapped[list["Recommendation"]] = relationship(
+    recommendations: Mapped[list[Recommendation]] = relationship(
         back_populates="meal",
     )
 
@@ -209,11 +209,11 @@ class Recommendation(Base):
         nullable=False,
     )
 
-    assessment: Mapped["HealthAssessment"] = relationship(
+    assessment: Mapped[HealthAssessment] = relationship(
         back_populates="recommendations",
     )
 
-    meal: Mapped["Meal"] = relationship(
+    meal: Mapped[Meal] = relationship(
         back_populates="recommendations",
     )
 

@@ -9,7 +9,6 @@ from google.genai import types
 from app.config import settings
 from app.schemas.health import GeminiRecommendations, PredictRequest
 
-
 logger = logging.getLogger(__name__)
 MODEL_NAME = "gemini-2.5-flash"
 

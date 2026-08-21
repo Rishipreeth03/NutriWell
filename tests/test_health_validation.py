@@ -26,9 +26,9 @@ def test_predict_request_accepts_core_fields():
         alcohol_consumption=1.5,
     )
 
-    assert payload.email == "user@example.com"
-    assert payload.age == 30
-    assert payload.bmi == 22.5
-    assert payload.exercise_frequency == 4
-    assert payload.diet_quality == 80
-    assert payload.sleep_hours == 7.5
+    assert payload.email == "user@example.com"  # nosec B101
+    assert payload.age == 30  # nosec B101
+    assert payload.bmi == 22.5  # nosec B101
+    assert payload.exercise_frequency == 4  # nosec B101
+    assert payload.diet_quality == 80  # nosec B101
+    assert payload.sleep_hours == 7.5  # nosec B101

@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from app.db.database import engine
 
 
-def get_db() -> Generator[Session, None, None]:
+def get_db() -> Generator[Session]:
     db = Session(engine)
 
     try:

@@ -1,14 +1,10 @@
 import os
+
 import joblib
-
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.model_selection import KFold, cross_val_score
-
-from xgboost import XGBRegressor
-
 from preprocess import preprocess_data
-
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.model_selection import KFold, cross_val_score, train_test_split
+from xgboost import XGBRegressor
 
 # -----------------------------
 # 1. Load and preprocess data

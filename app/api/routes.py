@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import UTC, datetime
+from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -9,7 +10,6 @@ from app.schemas.health import PredictRequest, PredictResponse
 from app.services.llm_service import get_gemini_recommendations
 from app.services.prediction import predict_health
 from app.services.recommendation import build_recommendations, classify_risk
-
 
 router = APIRouter()
 
@@ -22,7 +22,7 @@ def root():
 @router.post("/api/predict", response_model=PredictResponse)
 def predict_health_record(
     payload: PredictRequest,
-    db: Session = Depends(get_db),
+    db: Annotated[Session, Depends(get_db)],
 ):
     try:
         prediction = predict_health(payload)
@@ -61,7 +61,7 @@ def predict_health_record(
         alcohol_consumption=payload.alcohol_consumption,
         prediction=float(prediction),
         risk_level=risk_level,
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(UTC),
     )
 
     db.add(record)

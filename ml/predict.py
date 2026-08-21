@@ -1,7 +1,6 @@
 import joblib
 import pandas as pd
 
-
 # Load trained model
 model = joblib.load("../models/model_predict.pkl")
 
