@@ -34,7 +34,7 @@ Open `/docs` in the browser.
 
 ## Run the frontend
 
-`poetry run gradio run frontend/app.py`
+`poetry run python frontend/app.py`
 
 ## Run tests
 
