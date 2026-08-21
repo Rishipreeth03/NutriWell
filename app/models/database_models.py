@@ -216,3 +216,70 @@ class Recommendation(Base):
     meal: Mapped["Meal"] = relationship(
         back_populates="recommendations",
     )
+
+
+class HealthRecord(Base):
+    __tablename__ = "health_records"
+
+    id: Mapped[int] = mapped_column(
+        Integer,
+        primary_key=True,
+        autoincrement=True,
+    )
+
+    email: Mapped[str] = mapped_column(
+        String(255),
+        nullable=False,
+        index=True,
+    )
+
+    age: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+    )
+
+    bmi: Mapped[float] = mapped_column(
+        Float,
+        nullable=False,
+    )
+
+    exercise_frequency: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+    )
+
+    diet_quality: Mapped[float] = mapped_column(
+        Float,
+        nullable=False,
+    )
+
+    sleep_hours: Mapped[float] = mapped_column(
+        Float,
+        nullable=False,
+    )
+
+    smoking_status: Mapped[int] = mapped_column(
+        Integer,
+        nullable=False,
+    )
+
+    alcohol_consumption: Mapped[float] = mapped_column(
+        Float,
+        nullable=False,
+    )
+
+    prediction: Mapped[float | None] = mapped_column(
+        Float,
+        nullable=True,
+    )
+
+    risk_level: Mapped[str | None] = mapped_column(
+        String(50),
+        nullable=True,
+    )
+
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow,
+        nullable=False,
+    )

@@ -1,0 +1,18 @@
+[
+  {
+    "email": "demo@example.com",
+    "timestamp": "2026-08-21T02:52:35",
+    "input": {
+      "email": "demo@example.com",
+      "age": 30.0,
+      "bmi": 22.5,
+      "exercise_frequency": 4.0,
+      "diet_quality": 80.0,
+      "sleep_hours": 7.5,
+      "smoking_status": 0.0,
+      "alcohol_consumption": 1.5
+    },
+    "score": 100.0,
+    "risk": "Low"
+  }
+]
