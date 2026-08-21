@@ -62,5 +62,37 @@
     },
     "score": 31.04,
     "risk": "High"
+  },
+  {
+    "email": "rudra@gmail.com",
+    "timestamp": "2026-08-21T10:40:48",
+    "input": {
+      "email": "rudra@gmail.com",
+      "age": 11.0,
+      "bmi": 8.0,
+      "exercise_frequency": 2.0,
+      "diet_quality": 20.0,
+      "sleep_hours": 5.0,
+      "smoking_status": 0.0,
+      "alcohol_consumption": 10.0
+    },
+    "score": 77.53,
+    "risk": "Low"
+  },
+  {
+    "email": "rishi05@gmail.com",
+    "timestamp": "2026-08-21T11:05:35",
+    "input": {
+      "email": "rishi05@gmail.com",
+      "age": 26.0,
+      "bmi": 23.0,
+      "exercise_frequency": 3.0,
+      "diet_quality": 23.0,
+      "sleep_hours": 5.0,
+      "smoking_status": 1.0,
+      "alcohol_consumption": 23.0
+    },
+    "score": 60.3,
+    "risk": "Moderate"
   }
 ]
