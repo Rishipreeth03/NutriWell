@@ -87,3 +87,10 @@ http://127.0.0.1:7860 frontend ports
 http://localhost:8000/docs  backend ports
 }
 ```
+
+## If you wnat to run the porgram in the local 
+```bash
+  docker pull rishipreeth/nutriwell
+
+  docker run --name nutriwell-api -p 8000:8000 --env-file .env rishipreeth/nutriwell:latest
+```
