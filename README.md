@@ -80,3 +80,10 @@ Response body:
 ## Important note
 
 The exact ML feature order and preprocessing cannot be verified from the repository because `ml/train.py`, `ml/preprocess.py`, and the model pickle are not present. The project handles this by failing with a clear message instead of guessing or modifying the model.
+
+```json
+{
+http://127.0.0.1:7860 frontend ports
+http://localhost:8000/docs  backend ports
+}
+```
