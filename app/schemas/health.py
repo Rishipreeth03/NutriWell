@@ -14,6 +14,15 @@ class PredictRequest(BaseModel):
     alcohol_consumption: float = Field(ge=0)
 
 
+class GeminiRecommendations(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    food: list[str] = Field(min_length=3, max_length=3)
+    lifestyle: list[str] = Field(min_length=3, max_length=3)
+    priority: str
+    message: str
+
+
 class PredictResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -21,6 +30,7 @@ class PredictResponse(BaseModel):
     prediction: float
     risk_level: str
     recommendations: list[str]
+    gemini_recommendations: GeminiRecommendations
     created_at: datetime
 
 

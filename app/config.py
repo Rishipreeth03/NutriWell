@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./nutriwell.db"
     API_URL: str = "http://localhost:8000"
     MODEL_PATH: str = "models/model_prediction.pkl"
+    GEMINI_API_KEY: str | None = None
 
 
 settings = Settings()
