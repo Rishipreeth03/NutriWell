@@ -26,17 +26,17 @@ jobs:
           pip install -r requirements.txt
           pip install ruff bandit
 
-      - name: Ruff (blocking: syntax/import runtime rules)
+      - name: "Ruff (blocking: syntax/import runtime rules)"
         run: ruff check . --select E9,F63,F7,F82
 
-      - name: Ruff (non-blocking: full report)
+      - name: "Ruff (non-blocking: full report)"
         continue-on-error: true
         run: ruff check .
 
-      - name: Bandit (blocking: medium/high severity only)
+      - name: "Bandit (blocking: medium/high severity only)"
         run: bandit -r app frontend ml -q -ll
 
-      - name: Bandit (non-blocking: full report)
+      - name: "Bandit (non-blocking: full report)"
         continue-on-error: true
         run: bandit -r app frontend ml tests -q
 
